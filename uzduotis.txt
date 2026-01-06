@@ -1,0 +1,56 @@
+K3 Sąskaitų CRUD
+
+Užduotis.
+
+Sukurti puslapį kuriame galima suformuoti PVM Sąskaitą Faktūrą iš duomenų gautų iš API https://in3.dev/inv/
+
+Puslapyje suformuotą PVM Sąskaitą Faktūrą išsaugoti LocalStorage faile.
+
+Turi būti galimybė saugoti neribotą kiekį sąskaitų.
+
+Sukurti puslapį kuriame būtų rodomas visos PVM Sąskaitos Faktūros sąrašo pavidalu,
+ atvaizduojant 
+ sąskaitos numerį, 
+ datą ir 
+ galutinę sumą.
+
+Prie kiekvienos sąskaitos sąraše taip pat turi būti mygtukai
+ “Redaguoti”,  - bus redaguojama kiekis ir nuolaidos
+ “Žiūrėti” - matyti saskaitu visa sarasa
+ “Trinti”. 
+ 
+ Mygtukas “Žiūrėti” yra skirtas sąskaitos peržiūrai be redagavimo.
+
+
+
+Mygtukas “Redaguoti” turi atidaryti puslapį, 
+kuriame galima redaguoti sąskaitos prekių kiekius ir nuolaidas 
+Visos kitos sąskaitos dalys nebūtinai turi būti redaguojamos. 
+Po redagavimo turi pasikeisti ir faile išsisaugoti atitinkamos vertės,
+ PVM ir galutinė suma.
+
+Mygtukas “Trinti” yra skirtas sąskaitai pašalinti.
+
+
+Paaiškinimai.
+
+Sąskaitos formavimo taisyklės aprašytos užduotyje K2. Redagavimo funkcionalumą galima išplėsti, pridedant galimybę redaguoti ir kitus laukelius ir/ar atskiros prekės pašalinimą. 
+
+Padarykite būtinas įvedamų duomenų validacijas. 
+(kad po įvedimo galutinė suma nebūtų NaN) 
+
+Po sąskaitos redagavimo, turi būti rodoma ta pati, jau atnaujinta sąskaita 
+(po update, redirect atgal į tos sąskaitos edit)
+ Atidarius create puslapį, 
+ turi būti iškart rodoma naujai iš API gauta sąskaita, 
+ be redagavimo galimybės.
+
+Apačioje turi būti trys mygtukai: 
+“Išsaugoti” (išsaugo sąskaitą į failą ir rodo sąrašą),
+“Atnaujinti” (rodo naują sąskaitą iš API, prieš tai buvusi neišsaugoma), 
+“Atšaukti” (rodomas sąrašas). 
+
+Po kiekvienos atliktos CRUD operacijos, 
+parodykite atitinkamą pranešimą. 
+Galite pridėti savo sugalvotų funkcianalumų,
+kurie papildo, bet nepakeičia užduotyje nurodytų.
