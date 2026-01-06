@@ -117,7 +117,8 @@ const items = (meta) => {
                 itemDiscountValue = -itemDiscountValue * itemQuantity;
             } else if (itemDiscountType == 'percentage') {
                 itemItemSuma = itemPrice - (itemPrice * itemDiscountValue) / 100;
-                itemDiscountValue = -((itemPrice * itemQuantity * itemDiscountValue) / 100).toFixed(2) + '(' + itemDiscountValue + '%)';
+                itemDiscountValue =
+                    -((itemPrice * itemQuantity * itemDiscountValue) / 100).toFixed(2) + '(' + itemDiscountValue + '%)';
             }
         } else {
             itemItemSuma = itemPrice;

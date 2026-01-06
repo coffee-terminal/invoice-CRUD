@@ -1,3 +1,11 @@
+1. inicijuoja funkcija kuri pirma paziuri ar yra listas, jei yra rendina
+2. toje pacioje funkcijoje yra migtukas kuris laukia kad nurodytu pasirinkta spalva
+3. pasirinkta spalva siunciama i Store funkcija kad papilnai butu aprasomas value objektas
+4. store funkcijja ideda objekta i sarasa ir kreipiasi i Write funkcija
+5. write funkcija pavercia sarasa stringu, ir prideda prie key jo value data
+6.  store kreipiasi i render funkcija, joje selectinama kur bus talpinama, po to  pasirenkama template pagal kuria klonuojama struktuka kiekvienam forEach ciklui
+
+
 K3 Sąskaitų CRUD
 
 Užduotis.
