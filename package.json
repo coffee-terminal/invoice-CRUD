@@ -9,7 +9,11 @@
     "keywords": [],
     "author": "coffee-terminal",
     "license": "ISC",
+    "type": "commonjs",
     "devDependencies": {
-        "laravel-mix": "^6.0.49"
+        "laravel-mix": "^6.0.49",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.97.2",
+        "sass-loader": "^12.1.0"
     }
 }
