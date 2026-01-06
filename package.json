@@ -1,0 +1,15 @@
+{
+    "name": "crud-saskaita",
+    "version": "1.0.0",
+    "description": "invoices",
+    "main": "app.js",
+    "scripts": {
+        "start": "npx mix watch"
+    },
+    "keywords": [],
+    "author": "coffee-terminal",
+    "license": "ISC",
+    "devDependencies": {
+        "laravel-mix": "^6.0.49"
+    }
+}
