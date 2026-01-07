@@ -7,9 +7,15 @@ const port = 80;
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    const saskaitosHTML = fs.readFileSync('./html/index.html', 'utf8');
+    const saskaitosForm = fs.readFileSync('./html/invoice-form.html', 'utf8');
 
-    res.send(saskaitosHTML);
+    res.send(saskaitosForm);
+});
+
+app.get('/invoice-list', (req, res) => {
+    const saskaitosList = fs.readFileSync('./html/invoice-list.html', 'utf8');
+
+    res.send(saskaitosList);
 });
 
 // Paleidžia serverį ir parašo terminale, kad viskas yra gerai.

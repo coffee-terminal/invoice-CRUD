@@ -17,7 +17,6 @@
         "url": "https://github.com/coffee-terminal/invoice-CRUD/issues"
     },
     "homepage": "https://github.com/coffee-terminal/invoice-CRUD#readme",
-    "type": "commonjs",
     "dependencies": {
         "express": "^5.2.1",
         "uuid": "^13.0.0"

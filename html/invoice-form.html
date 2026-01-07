@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lt">
+<script src="appform.js" defer></script>
+<!-- <link rel="stylesheet" href="styleform.css"> -->
+<link rel="stylesheet" href="style.css">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
-    <title>INVOICE</title>
+    <title>PVM Sąskaitos Faktūros Formavimas</title>
 </head>
 
 <body>
+    <!-- <h1>Suformuokite PVM Sąskaitą Faktūrą</h1> -->
+    <div class="buttons3">
+        <button id="fetchData">Gauti sąskaitą</button>
+        <button id="saveInvoice" style="display: none;">Išsaugoti sąskaitą</button>
 
-    <div id="app">
+        <Button>
+            <p><a href="/invoice-list">Peržiūrėti visų sąskaitų sąrašą</a></p>
+        </Button>
+    </div>
+
+
+    <div id="app" style="display: none">
         <header>
             <div class="topHeader">
                 <h3><span class="SaskaitosNr"></span></h3>
@@ -81,6 +92,10 @@
             </div>
         </footer>
     </div>
+
+
+
+
 </body>
 
 </html>
