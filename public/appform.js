@@ -289,7 +289,11 @@ document.getElementById('fetchData').addEventListener('click', async () => {
             number: data.number,
             date: data.date,
             total: document.querySelector('.itemSumaSuPVM').innerText,
+            all: data,
         };
+
+        console.log(currentInvoice.all);
+
         // console.log(currentInvoice, data);
         // currentInvoice = data;
         // console.log(currentInvoice.meta);
@@ -301,6 +305,9 @@ document.getElementById('fetchData').addEventListener('click', async () => {
     }
 });
 
+// inicijuoti click kad generuotu uzkrovus puslapi
+// document.getElementById('fetchData').click();
+
 document.getElementById('saveInvoice').addEventListener('click', () => {
     if (!currentInvoice) return;
 
@@ -309,7 +316,8 @@ document.getElementById('saveInvoice').addEventListener('click', () => {
     invoices.push(currentInvoice);
     localStorage.setItem('invoices', JSON.stringify(invoices));
 
-    alert('Sąskaita išsaugota!');
+    // alert('Sąskaita išsaugota!');
+    console.log('prideta');
     document.getElementById('saveInvoice').style.display = 'none';
     currentInvoice = null;
 });

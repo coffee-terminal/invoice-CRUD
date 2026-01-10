@@ -34,30 +34,45 @@ body {
 
 
 .buttons3 {
+    top: 5px;
+    position: fixed;
+    padding-left: 10px;
     display: flex;
     flex-direction: row;
+    width: 100%;
     flex-wrap: wrap;
     column-gap: 20px;
     align-items: center;
+    justify-content: flex-start;
+    row-gap: 20px;
 
     button {
-        padding: 5px;
+        padding: 2px;
 
         a {
             text-decoration: none;
         }
     }
+
+    #fetchData {
+        display: flex;
+        /* align-self: center; */
+    }
+
 }
 
+
+
 #app {
-    margin-top: 0px;
+
+    margin-top: 25px;
     background-color: gray;
     width: 210mm;
     min-height: 260mm;
     /* height: 100vh; */
     padding: 20px;
     padding-left: 40px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 
     header {
         display: flex;

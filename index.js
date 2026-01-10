@@ -18,6 +18,12 @@ app.get('/invoice-list', (req, res) => {
     res.send(saskaitosList);
 });
 
+app.get('/invoice-edit', (req, res) => {
+    const saskaitosEdit = fs.readFileSync('./html/invoice-edit.html', 'utf8');
+
+    res.send(saskaitosEdit);
+});
+
 // Paleidžia serverį ir parašo terminale, kad viskas yra gerai.
 app.listen(port, () => {
     console.log(`Viskas gerai. Bebras dirba ant ${port} porto`);

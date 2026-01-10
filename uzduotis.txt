@@ -24,7 +24,7 @@ Sukurti puslapį kuriame būtų rodomas visos PVM Sąskaitos Faktūros sąrašo 
 
 Prie kiekvienos sąskaitos sąraše taip pat turi būti mygtukai
  “Redaguoti”,  - bus redaguojama kiekis ir nuolaidos
- “Žiūrėti” - matyti saskaitu visa sarasa
+ “Žiūrėti” 
  “Trinti”. 
  
  Mygtukas “Žiūrėti” yra skirtas sąskaitos peržiūrai be redagavimo.
