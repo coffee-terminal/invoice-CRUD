@@ -110,49 +110,52 @@ input {
     }
 
     main {
-        .items {
+        .TableColumns {
+            display: flex;
+            flex-direction: row;
+            background-color: lightgray;
             margin-top: 30px;
+
+            border: 1px solid black;
+            /* line-height: 41px; */
+
+            .Numeris {
+                width: 3%;
+                text-align: center;
+
+            }
+
+            .Preke {
+                border-left: 1px solid black;
+                padding: 0 5px 0 5px;
+                width: 40%;
+            }
+
+            .Kiekis,
+            .Kaina,
+            .Nuolaida,
+            .SuPVM,
+            .BePVM {
+                border-left: 1px solid black;
+                padding: 0 5px 0 5px;
+                width: 11%;
+            }
+
+            .Kiekis {
+                width: 8%;
+            }
+
+            .Nuolaida {
+                width: 15%;
+            }
+        }
+
+        .items {
             display: flex;
             flex-direction: column;
             border: 1px solid black;
             /* line-height: 41px; */
 
-            .TableColumns {
-                display: flex;
-                flex-direction: row;
-                background-color: lightgray;
-                border-bottom: 1px solid black;
-
-                .Numeris {
-                    width: 3%;
-                    text-align: center;
-
-                }
-
-                .Preke {
-                    border-left: 1px solid black;
-                    padding: 0 5px 0 5px;
-                    width: 40%;
-                }
-
-                .Kiekis,
-                .Kaina,
-                .Nuolaida,
-                .SuPVM,
-                .BePVM {
-                    border-left: 1px solid black;
-                    padding: 0 5px 0 5px;
-                    width: 11%;
-                }
-
-                .Kiekis {
-                    width: 8%;
-                }
-
-                .Nuolaida {
-                    width: 15%;
-                }
-            }
 
             .item {
                 background-color: aliceblue;

@@ -171,10 +171,13 @@ function showInvoice(invoice) {
             divDiscountValue.className = 'itemDiscountValue';
             let itemDiscountValue = data.discount.value;
             let itemItemSuma = 0;
+            let itemsDiscountFixed = 0;
+
             if (itemDiscountType != undefined) {
                 if (itemDiscountType == 'fixed') {
-                    itemItemSuma = itemPrice - itemDiscountValue;
-                    itemDiscountValue = -itemDiscountValue * itemQuantity;
+                    itemsDiscountFixed = itemDiscountValue;
+                    itemItemSuma = itemPrice;
+                    itemDiscountValue = -itemDiscountValue;
                 } else if (itemDiscountType == 'percentage') {
                     itemItemSuma = itemPrice - (itemPrice * itemDiscountValue) / 100;
                     itemDiscountValue =
@@ -192,12 +195,12 @@ function showInvoice(invoice) {
 
             const divItemSuma = document.createElement('div');
             divItemSuma.className = 'itemBePVM';
-            divItemSuma.innerText = (itemItemSuma * itemQuantity).toFixed(2);
+            divItemSuma.innerText = (itemItemSuma * itemQuantity - itemsDiscountFixed).toFixed(2);
             itemInside.append(divItemSuma);
 
             const divItemSuPvm = document.createElement('div');
             divItemSuPvm.className = 'itemSuPVM';
-            divItemSuPvm.innerText = (itemItemSuma * itemQuantity * 1.21).toFixed(2);
+            divItemSuPvm.innerText = ((itemItemSuma * itemQuantity - itemsDiscountFixed) * 1.21).toFixed(2);
             itemInside.append(divItemSuPvm);
 
             itemsSumaBePVM = itemsSumaBePVM + itemItemSuma * itemQuantity;
@@ -208,6 +211,7 @@ function showInvoice(invoice) {
                 shippment.innerText = meta.all.shippingPrice.toFixed(2) + ' Eur';
 
                 totalPrice.append(shippment);
+                itemsSumaBePVM = itemsSumaBePVM - itemsDiscountFixed;
 
                 const itemsSuma = document.createElement('div');
                 itemsSuma.className = 'itemSuma';

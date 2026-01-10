@@ -128,10 +128,13 @@ document.getElementById('fetchData').addEventListener('click', async () => {
                 divDiscountValue.className = 'itemDiscountValue';
                 let itemDiscountValue = data.discount.value;
                 let itemItemSuma = 0;
+                let itemsDiscountFixed = 0;
+
                 if (itemDiscountType != undefined) {
                     if (itemDiscountType == 'fixed') {
-                        itemItemSuma = itemPrice - itemDiscountValue;
-                        itemDiscountValue = -itemDiscountValue * itemQuantity;
+                        itemsDiscountFixed = itemDiscountValue;
+                        itemItemSuma = itemPrice;
+                        itemDiscountValue = -itemDiscountValue;
                     } else if (itemDiscountType == 'percentage') {
                         itemItemSuma = itemPrice - (itemPrice * itemDiscountValue) / 100;
                         itemDiscountValue =
@@ -149,12 +152,12 @@ document.getElementById('fetchData').addEventListener('click', async () => {
 
                 const divItemSuma = document.createElement('div');
                 divItemSuma.className = 'itemBePVM';
-                divItemSuma.innerText = (itemItemSuma * itemQuantity).toFixed(2);
+                divItemSuma.innerText = (itemItemSuma * itemQuantity - itemsDiscountFixed).toFixed(2);
                 itemInside.append(divItemSuma);
 
                 const divItemSuPvm = document.createElement('div');
                 divItemSuPvm.className = 'itemSuPVM';
-                divItemSuPvm.innerText = (itemItemSuma * itemQuantity * 1.21).toFixed(2);
+                divItemSuPvm.innerText = ((itemItemSuma * itemQuantity - itemsDiscountFixed) * 1.21).toFixed(2);
                 itemInside.append(divItemSuPvm);
 
                 itemsSumaBePVM = itemsSumaBePVM + itemItemSuma * itemQuantity;
@@ -165,6 +168,7 @@ document.getElementById('fetchData').addEventListener('click', async () => {
                     shippment.innerText = meta.shippingPrice.toFixed(2) + ' Eur';
 
                     totalPrice.append(shippment);
+                    itemsSumaBePVM = itemsSumaBePVM - itemsDiscountFixed;
 
                     const itemsSuma = document.createElement('div');
                     itemsSuma.className = 'itemSuma';
@@ -306,7 +310,7 @@ document.getElementById('fetchData').addEventListener('click', async () => {
 });
 
 // inicijuoti click kad generuotu uzkrovus puslapi
-// document.getElementById('fetchData').click();
+document.getElementById('fetchData').click();
 
 document.getElementById('saveInvoice').addEventListener('click', () => {
     if (!currentInvoice) return;
